@@ -7,10 +7,12 @@ const runSchema = new mongoose.Schema(
       ref: "Workflow",
     },
     inputText: String,
-    stepOutputs: {
-      stepType: String,
-      output: String,
-    },
+    stepOutputs: [
+      {
+        stepType: String,
+        output: String,
+      },
+    ],
   },
   { timestamps: true },
 );
