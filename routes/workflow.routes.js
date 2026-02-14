@@ -6,9 +6,13 @@ const {
   getWorkflows,
   runWorkflowController,
 } = require("../controllers/workflow.controller");
+const {
+  validateWorkflow,
+  validateRun,
+} = require("../middleware/validateInput");
 
-router.post("/workflows", createWorkflow);
+router.post("/workflows", validateWorkflow, createWorkflow);
 router.get("/workflows", getWorkflows);
-router.post("/workflows/:id/run", runWorkflowController);
+router.post("/workflows/:id/run", validateRun, runWorkflowController);
 
 module.exports = router;
