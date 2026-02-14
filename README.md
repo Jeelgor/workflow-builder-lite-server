@@ -77,3 +77,31 @@ GET /api/health
 Returns status of API, database, and LLM.
 
 ---
+
+
+### Backend Checks
+
+**API Endpoints**
+
+* Tested workflow creation and execution endpoints using Postman
+* Verified proper responses and error handling for invalid inputs
+
+**Database**
+
+* Confirmed MongoDB connection status is correctly reflected in health endpoint
+* Verified workflows and runs are stored and retrieved correctly
+
+**LLM Integration**
+
+* Tested with valid API key to ensure responses are generated
+* Tested with invalid API key to confirm health endpoint detects failure
+
+**Health Endpoint**
+
+* Verified backend, database, and LLM statuses are reported correctly
+
+---
+
+### Overall Result
+
+All core flows were tested manually to ensure the application is stable, handles common edge cases, and provides clear feedback to the user.
