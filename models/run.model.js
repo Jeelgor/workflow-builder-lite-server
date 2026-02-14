@@ -6,6 +6,10 @@ const runSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "Workflow",
     },
+    workflowName: {
+      type: String,
+      required: true,
+    },
     inputText: String,
     stepOutputs: [
       {

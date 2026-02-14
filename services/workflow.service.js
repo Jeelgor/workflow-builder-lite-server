@@ -48,6 +48,7 @@ async function runWorkflow(workflow, inputText) {
 
   const run = await Run.create({
     workflowId: workflow._id,
+    workflowName: workflow.name,
     inputText,
     stepOutputs,
   });

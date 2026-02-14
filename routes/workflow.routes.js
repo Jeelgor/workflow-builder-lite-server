@@ -5,6 +5,7 @@ const {
   createWorkflow,
   getWorkflows,
   runWorkflowController,
+  getWorkflowsById,
 } = require("../controllers/workflow.controller");
 const {
   validateWorkflow,
