@@ -15,8 +15,12 @@ async function checkHealth() {
 
   // in this condition if LLM return any error then health of LLM is update by down
   try {
-    await summarizeText("health check");
-  } catch {
+    const result = await summarizeText("health check");
+
+    if (!result || result.includes("error")) {
+      health.llm = "down";
+    }
+  } catch (e) {
     health.llm = "down";
   }
 
