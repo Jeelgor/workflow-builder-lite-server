@@ -9,10 +9,11 @@ async function checkHealth() {
   };
 
   // this condition will check wether mongoDB is connected or not
-  if (mongoose.connection.readyState !== 1) {
+  try {
+    await mongoose.connection.db.admin().ping();
+  } catch (error) {
     health.database = "down";
   }
-
   // in this condition if LLM return any error then health of LLM is update by down
   try {
     const result = await summarizeText("health check");
